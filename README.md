@@ -1,6 +1,6 @@
 # Read The Content of a URL Using HTTP Request Library in Python 
 
-![](attachment:getpostRequest.png)<br>
+![](getpostRequest.png)<br>
 source:(https://www.geeksforgeeks.org/get-post-requests-using-python/)
 
 ## 1- Libraries:
@@ -16,7 +16,7 @@ source:(https://www.geeksforgeeks.org/get-post-requests-using-python/)
 - headers: to give a useful information such as a content type.<br>
 
 ## 3- Result:
-![](Screen Shot 2020-07-05 at 5.42.24 PM.png)
+![](result.png)
 
 
 ### <li> References:</li>
