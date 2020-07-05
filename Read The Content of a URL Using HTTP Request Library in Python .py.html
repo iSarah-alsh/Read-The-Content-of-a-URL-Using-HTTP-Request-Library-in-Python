@@ -1,0 +1,75 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Read The Content of a URL Using HTTP Request Library in Python 
+
+# ![getpostRequest.png](attachment:getpostRequest.png)<br>
+# source:(https://www.geeksforgeeks.org/get-post-requests-using-python/)
+
+# ## 1- Libraries:
+# <b>1- requests Library:</b> for making HTTP requests in Python.<br>
+# <b>2- re Library:</b> regular expression library need it to print only the contect without html tags.<br>
+
+# ## 2- HTTP request methods:
+
+# - get( ): HTTP has 2 methods GET and POST each on determine which action you want to perform in this code I used GET method to request the data (content) from the URL.
+# - content: gives you access to the raw bytes of the URL.
+# - text: convert raw bytes that show in content into a string using a character encoding such as UTF-8.
+# - status_code: informs you of the status of the request.
+# - sub( ): replace the substrings that match with the search pattern with a string of user’s choice.
+# - headers: to give a useful information such as a content type.
+
+# In[27]:
+
+
+# importing the requests and regular expression libraries
+import requests as req
+import re
+
+resp = req.get("https://ai.googleblog.com/2020/03/visual-transfer-learning-for-robotic.html")
+
+if resp:
+    print('Response OK')
+else:
+    print('Response Failed')
+
+print(resp.status_code)
+
+
+# In[29]:
+
+
+print(resp.content)
+
+
+# In[14]:
+
+
+content = resp.text
+print(content)
+
+
+# In[24]:
+
+
+stripped = re.sub('<[^<]+?>', '', content)
+print(stripped)
+
+
+# In[20]:
+
+
+print(resp.headers)
+
+
+# ### <li> References:</li>
+# 1- Python Requests tutorial: http://zetcode.com/python/requests/ <br>
+# 2- How To Get Started With the Requests Library in Python: https://www.digitalocean.com/community/tutorials/how-to-get-started-with-the-requests-library-in-python <br>
+# 3- re — Regular expression operations: https://docs.python.org/2/library/re.html <br>
+# 4- https://www.geeksforgeeks.org/get-post-requests-using-python/ <br>
+
+# In[ ]:
+
+
+
+
